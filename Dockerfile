@@ -1,11 +1,9 @@
-# Use the official Ruby image as a base
-FROM ruby:2.7
+# Use the official Ruby image with a compatible version
+FROM ruby:3.0
 
 # Install necessary packages and dependencies
 RUN apt-get update && \
     apt-get install -y curl git build-essential && \
-    gem update --system && \
-    gem install ffi -v 1.17.0 && \
     gem install wpscan
 
 # Set the working directory
